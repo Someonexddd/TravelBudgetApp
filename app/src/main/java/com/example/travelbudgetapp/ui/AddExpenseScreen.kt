@@ -96,9 +96,9 @@ fun AddExpenseScreen(
             onClick = {
                 if (amount.isNotEmpty() && selectedCategory != null) {
                     val expense = Expense(
-                        selectedCategory!!.category,
-                        amount.toDouble(),
-                        description
+                        category = selectedCategory!!.category,
+                        amount = amount.toDouble(),
+                        description = description
                     )
                     expenseRepository.addExpense(expense)
                     onBack()

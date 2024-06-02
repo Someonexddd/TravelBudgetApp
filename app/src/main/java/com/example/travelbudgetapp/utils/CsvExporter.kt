@@ -11,7 +11,7 @@ fun exportToCSV(context: Context, expenses: List<Expense>) {
     val writer = FileWriter(csvFile)
     writer.append("Category,Amount,Description,Date\n")
     expenses.forEach { expense ->
-        writer.append("${expense.category},${expense.amount},${expense.description ?: ""},${expense.date}\n")
+        writer.append("${expense.category},${expense.amount},${expense.description ?: ""},${expense.createdAt}\n")
     }
     writer.flush()
     writer.close()
